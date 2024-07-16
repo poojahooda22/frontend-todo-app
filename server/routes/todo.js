@@ -17,5 +17,10 @@ router.post('/todos', authenticateJwt, async (req, res) => {
     })
     .catch((err) => {
         res.status(500).json({error: 'Failed to create a new todo'})
-    })
-})
+    });
+});
+
+router.get('/todos'), authenticateJwt, async(req, res) => {
+    const userId = req.userId;
+    
+}
