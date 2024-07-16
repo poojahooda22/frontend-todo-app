@@ -11,10 +11,10 @@ function App() {
   return (
     <Router>
       <div className='w-full h-screen bg-zinc-900 text-white'>
-        <Router>
-          <Route path='/' element={<LandingPage />}/>
-          <Route path='/signup' element={<Signup/>} />
-        </Router>
+      <Router>
+        <Route path='/' element={<LandingPage />}/>
+        <Route path='/signup' element={<Signup/>} />
+      </Router>
       
 
     </div>
