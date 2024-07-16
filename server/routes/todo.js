@@ -32,3 +32,4 @@ router.get('/todos', authenticateJwt, async(req, res) => {
     })
 });
 
+module.exports = router;
