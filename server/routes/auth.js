@@ -21,13 +21,13 @@ router.post('/signup', async (req, res) => {
 
 
 router.post('/login', async(req, res) => {
-    const {username, password} = req.headers;
-    const user = await User.findOne({username});
+    const {username, password} = req.body;
+    const user = await User.findOne({username, password});
     if(user) {
         const token = jwt.sign({id: user._id}, SECRET, {expiresIn: '1h'}); 
         res.json({message: 'user logged in successfully', token});
     } else {
-        
+        res.status(403).json({message: 'User not found'}); 
     }
 })
 
