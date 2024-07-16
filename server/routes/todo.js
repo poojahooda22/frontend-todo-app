@@ -1,5 +1,5 @@
 const express = require('express');
-const {authenticateJwt, SECRET} = require('../middleware/auth');
+const {authenticateJwt, SECRET} = require('../middleware');
 const { Todo } = require('../db/index');
 
 const router = express.Router();
@@ -31,5 +31,21 @@ router.get('/todos', authenticateJwt, async(req, res) => {
         res.status(500).json({error: 'Failed to fetch todos'})
     })
 });
+
+router.patch('/todos/:todoId/done', authenticateJwt, (req, res) => {
+    const { todoId } = req.params;
+    const userId = req.userId;
+  
+    Todo.findOneAndUpdate({ _id: todoId, userId }, { done: true }, { new: true })
+      .then((updatedTodo) => {
+        if (!updatedTodo) {
+          return res.status(404).json({ error: 'Todo not found' });
+        }
+        res.json(updatedTodo);
+      })
+      .catch((err) => {
+        res.status(500).json({ error: 'Failed to update todo' });
+      });
+  });
 
 module.exports = router;
