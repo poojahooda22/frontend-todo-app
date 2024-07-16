@@ -21,5 +21,5 @@ app.listen(port, () => {
 
 
 //connect to mongoose
-mongoose.connect("mongodb+srv://phooda938:phooda938@todo-app.3zh8laj.mongodb.net/")
+mongoose.connect("mongodb+srv://phooda938:phooda938@todo-app.3zh8laj.mongodb.net/", { dbName: "todo-app" })
 
