@@ -36,7 +36,7 @@ router.get('/me', authenticateJwt, async(req, res) => {
     if(user) {
         res.json({username: user.username});
     } else {
-        res.status(403).json({message: 'user not found'})
+        res.status(403).json({message: 'user not logged in'})
     }    
 })
 
