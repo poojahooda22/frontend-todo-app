@@ -10,7 +10,8 @@ const userSchema = new mongoose.Schema({
 const todoSchema = new mongoose.Schema({
     title: String,
     description: String,
-    time: String
+    done: Boolean,
+    userId: String
 })
 
 const Todo = mongoose.model('Todo', todoSchema);
