@@ -4,7 +4,7 @@ const Signup = () => {
   return (
     <div>
         <Card>
-            
+            <TextField id="outlined-basic" label="Outlined" variant="outlined" />
         </Card>
     </div>
   )
