@@ -1,5 +1,5 @@
 const express = require('express');
-const {authenticateJwt, SECRET} = require('../middleware/auth');
+const {authenticateJwt, SECRET} = require('../middleware');
 const { User } = require('../db/index');
 const jwt = require('jsonwebtoken');
 
