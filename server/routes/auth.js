@@ -31,6 +31,13 @@ router.post('/login', async(req, res) => {
     }
 })
 
+router.get('/me', authenticateJwt, async(req, res) => {
+    const user = await User.findOne({_id: req.userId});
+    if(user) {
+        
+    }
+})
+
 
 
 module.exports = router;
