@@ -2,7 +2,7 @@ import { Card, TextField } from "@mui/material"
 
 const Signup = () => {
   return (
-    <div>
+    <div className="">
         <Card>
             <TextField id="outlined-basic" label="Outlined" variant="outlined" />
         </Card>
