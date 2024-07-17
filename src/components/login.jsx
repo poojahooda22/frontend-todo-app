@@ -25,14 +25,7 @@ const Login = () => {
                 <p>OR</p>
                 <div className="w-[6vw] h-[.1px] border-[.1px] border-zinc-300"></div>
             </div>
-            <Link to="/login" className="text-[.7vw]">Don&apos;t have an account <span className="underline text-blue-500 font-semibold">Signup</span></Link>
-            <Button variant="contained" 
-                margin="normal"
-                size="large"
-                style={{
-                    marginTop: '1vw',        
-                }}
-            >Login</Button>
+            <Link to="/login" className="text-[.7vw]">Don&apos;t have an account <span className="underline text-blue-500 font-semibold">Signup</span></Link> 
         </Card>
     </div>
   )
