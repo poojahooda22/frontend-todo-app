@@ -1,8 +1,12 @@
 import { Button, Card, TextField } from "@mui/material"
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import { useState } from "react";
 
 const Signup = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
   return (
     <div className="flex items-center justify-center pt-[14vw]">
         <Card style={{
@@ -12,22 +16,29 @@ const Signup = () => {
         >   
             
             <h2 className="text-[.9vw] font-medium text-center mb-[1vw]">Welcome! Please enter your details</h2>
-            <TextField style={{width: '360px', height: '50px'}}  label="Email" variant="outlined" size="small" margin="normal" />
-            <TextField style={{width: '360px', height: '50px'}}  label="password" variant="outlined" size="small" margin="normal" />
+            <TextField style={{width: '360px', height: '50px'}}  label="Email" variant="outlined" size="small" margin="normal"
+            onChange={(e) => {
+                setEmail(e.target.value)
+            }}
+            />
+            <TextField style={{width: '360px', height: '50px'}}  label="password" variant="outlined" size="small" margin="normal" 
+            onChange={(e) => {
+                setPassword(e.target.value)
+            }}
+            />
             <Button variant="contained" 
                 margin="normal"
                 size="large"
                 style={{
                     marginTop: '1vw',        
                 }}
-                onClick={ async () => {
-                    console.log('Signup clicked')
+                onClick={ async () => { 
                     const res =  await axios.post('http://localhost:3000/auth/signup', {
-                        username: 'username',
-                        password: 'password'
+                        username: email,
+                        password: password
                     })
                     let data = res.data;
-                    console.log(data)
+                    localStorage.setItem("token", data.token);
                 }}
             >Signup</Button>
             <div className="flex items-center gap-[.5vw] py-[1vw]">
