@@ -20,13 +20,12 @@ const Signup = () => {
                     marginTop: '1vw',        
                 }}
             >Signup</Button>
-            <div className="flex items-center gap-4 py-[1vw]">
-                <div className="w-[6vw] h-[.1px] border-[.1px] border-zinc-300"></div>
+            <div className="flex items-center gap-[.5vw] py-[1vw]">
+                <div className="w-[5.5vw] h-[.1px] border-[.1px] border-zinc-300"></div>
                 <p>OR</p>
-                <div className="w-[6vw] h-[.1px] border-[.1px] border-zinc-300"></div>
+                <div className="w-[5.5vw] h-[.1px] border-[.1px] border-zinc-300"></div>
             </div>
-            <Link to="/login" className="text-[.7vw]">Already have an account <span className="underline text-blue-500 font-semibold">Login</span></Link>
-            
+            <Link to="/login" className="text-[.7vw]">Already have an account <span className="underline text-blue-500 font-semibold">Login</span></Link>  
         </Card>
     </div>
   )
