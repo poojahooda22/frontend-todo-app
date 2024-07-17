@@ -9,17 +9,7 @@ const LandingPage = () => {
 
   useEffect(() => {
 
-    const init() = async() => {
-      const res = await axios.get('http://localhost:3000/auth/me', {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`
-        }
-      })
-      let data = res.data;
-      setUsername(data.username)
-    }
-    
-    init();
+   const res = axios.get('')
   }, [])
 
   return (
