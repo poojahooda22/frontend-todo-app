@@ -20,7 +20,6 @@ const Appbar = () => {
         {/* <div>
             <Button variant="contained" margin="normal" size="large"
                 onClick={() => {
-
             >Signup</Button>
         </div> */}
 
