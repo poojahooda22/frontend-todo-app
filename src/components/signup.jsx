@@ -1,5 +1,6 @@
 import { Button, Card, TextField } from "@mui/material"
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import axios from 'axios';
 
 const Signup = () => {
   return (
@@ -18,6 +19,15 @@ const Signup = () => {
                 size="large"
                 style={{
                     marginTop: '1vw',        
+                }}
+                onClick={ async () => {
+                    console.log('Signup clicked')
+                    const res =  await axios.post('http://localhost:3000/auth/signup', {
+                        username: 'username',
+                        password: 'password'
+                    })
+                    let data = res.data;
+                    console.log(data)
                 }}
             >Signup</Button>
             <div className="flex items-center gap-[.5vw] py-[1vw]">
