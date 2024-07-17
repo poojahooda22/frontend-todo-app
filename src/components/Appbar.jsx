@@ -19,7 +19,6 @@ const Appbar = () => {
         {/* <div><h2 className="text-[1vw] font-semibold text-center">Todo App</h2></div> */}
         {/* <div>
             <Button 
-            >
         </div> */}
 
         <Signup />
