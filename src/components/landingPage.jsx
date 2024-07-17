@@ -1,9 +1,11 @@
+import Appbar from "./Appbar"
 
 
 const LandingPage = () => {
   return (
     <div>
-      <h1>Hello</h1>
+      <Appbar />
+      
     </div>
   )
 }
