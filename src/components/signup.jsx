@@ -13,12 +13,6 @@ const Signup = () => {
             <h2 className="text-[.9vw] font-medium text-center mb-[1vw]">Welcome! Please enter your details</h2>
             <TextField style={{width: '360px', height: '50px'}}  label="Email" variant="outlined" size="small" margin="normal" />
             <TextField style={{width: '360px', height: '50px'}}  label="password" variant="outlined" size="small" margin="normal" />
-            <div className="flex items-center gap-4 py-[1vw]">
-                <div className="w-[6vw] h-[.1px] border-[.1px] border-zinc-300"></div>
-                <p>OR</p>
-                <div className="w-[6vw] h-[.1px] border-[.1px] border-zinc-300"></div>
-            </div>
-            <Link to="/login" className="text-[.7vw]">Already have an account <span className="underline text-blue-500 font-semibold">Login</span></Link>
             <Button variant="contained" 
                 margin="normal"
                 size="large"
@@ -26,6 +20,13 @@ const Signup = () => {
                     marginTop: '1vw',        
                 }}
             >Signup</Button>
+            <div className="flex items-center gap-4 py-[1vw]">
+                <div className="w-[6vw] h-[.1px] border-[.1px] border-zinc-300"></div>
+                <p>OR</p>
+                <div className="w-[6vw] h-[.1px] border-[.1px] border-zinc-300"></div>
+            </div>
+            <Link to="/login" className="text-[.7vw]">Already have an account <span className="underline text-blue-500 font-semibold">Login</span></Link>
+            
         </Card>
     </div>
   )
