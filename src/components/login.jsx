@@ -16,7 +16,7 @@ const Login = () => {
           margin="normal"
           size="large"
           style={{
-              marginTop: '1vw',        
+            marginTop: '1vw',        
           }}
         >Login</Button>
         <div className="flex items-center gap-[.5vw] py-[1vw]">
