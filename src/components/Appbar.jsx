@@ -19,7 +19,7 @@ const Appbar = () => {
         {/* <div><h2 className="text-[1vw] font-semibold text-center">Todo App</h2></div> */}
         {/* <div>
             <Button variant="contained" margin="normal" size="large"
-                onClick={()
+                onClick
             >Signup</Button>
         </div> */}
 
