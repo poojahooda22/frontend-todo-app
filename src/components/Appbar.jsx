@@ -7,7 +7,7 @@ const Appbar = () => {
     const navigate = useNavigate();
   return (
     <div className="flex items-center justify-center px-[2vw] py-[1.2vw]">
-        <div><h2 className="text-[1vw] font-semibold">Todo App</h2></div>
+        <div><h2 className="text-[1vw] font-semibold text-center">Todo App</h2></div>
         {/* <div>
             <Button variant="contained" margin="normal" size="large"
                 onClick={() => {
@@ -16,7 +16,7 @@ const Appbar = () => {
             >Signup</Button>
         </div> */}
 
-        
+        <Signup />
     </div>
   )
 }
