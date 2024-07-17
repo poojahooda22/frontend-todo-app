@@ -9,8 +9,20 @@ const LandingPage = () => {
 
   useEffect(() => {
 
-   const res = axios.get('')
+    const res = axios.get('http://localhost:3000/auth/me', {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      }
+    })
+    const data = res.data;
+    setUsername(data.username)
   }, [])
+
+  if(username) {
+    return (
+      <div>Hello{username}</div>
+    )
+  }
 
   return (
     <div>
