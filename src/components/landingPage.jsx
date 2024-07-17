@@ -5,7 +5,7 @@ import axios from 'axios'
 
 const LandingPage = () => {
 
-  const [username, setUsername] = useState('');
+  const [userEmail, setUserEmail] = useState('');
 
   useEffect(() => {
 
@@ -15,12 +15,12 @@ const LandingPage = () => {
       }
     })
     const data = res.data;
-    setUsername(data.username)
+    setUserEmail(data.username)
   }, [])
 
-  if(username) {
+  if(!userEmail) {
     return (
-      <div>Hello{username}</div>
+      <div><h2>{userEmail}</h2></div>
     )
   }
 
