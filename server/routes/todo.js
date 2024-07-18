@@ -42,7 +42,7 @@ router.patch('/todos/:todoId/done', authenticateJwt, (req, res) => {
           return res.status(404).json({ error: 'Todo not found' });
         }
         res.json(updatedTodo);
-    })
+  })
       .catch((err) => {
         res.status(500).json({ error: 'Failed to update todo' });
     });
