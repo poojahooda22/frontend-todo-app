@@ -64,7 +64,8 @@ const Login = () => {
           <p>OR</p>
           <div className="w-[5.5vw] h-[.1px] border-[.1px] border-zinc-300"></div>
         </div>
-        <Link to="/signup" className="text-[.7vw]">
+        <Link to="/signup" className="text-[.7vw]"
+        >
           Don&apos;t have an account 
           <span className="underline text-blue-500 font-semibold">Signup</span>
           </Link> 
