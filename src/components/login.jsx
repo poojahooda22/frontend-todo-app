@@ -31,7 +31,8 @@ const Login = () => {
         display:"flex", flexDirection: "column", 
         justifyContent: "center",  alignItems: "center",  }}
       >    
-        <h2 className="text-[.9vw] font-medium text-center mb-[1vw]">Welcome again! </h2>
+        <h2 className="text-[.9vw] font-medium text-center mb-[1vw]">
+          Welcome again! </h2>
         <TextField 
           style={{width: '360px', height: '50px'}}  
           label="Email" variant="outlined" size="small" 
