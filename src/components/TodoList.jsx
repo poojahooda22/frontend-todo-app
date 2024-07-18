@@ -1,5 +1,5 @@
-import { Avatar, Button, Card, TextField } from "@mui/material"
-import { useState } from "react"
+import { Avatar, Button, Card, TextField, Typography, CardContent } from "@mui/material"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom";
 
 const TodoList = () => {
@@ -7,6 +7,20 @@ const TodoList = () => {
     const [description, setDescription] = useState('');
     const navigate = useNavigate();
     const [todos, setTodos] = useState([]);
+
+    useEffect(() => {
+        const getTodos = async () => {
+            const response = await fetch('http://localhost:3000/todo/todos', {
+                method: 'GET',
+               headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`
+               } 
+            })
+            const data = await response.json();
+            setTodos(data);
+        }
+        getTodos();
+    })
 
     const addTodo = async () => {
         const response = await fetch('http://localhost:3000/todo/todos', {
@@ -31,7 +45,7 @@ const TodoList = () => {
                 <Avatar src="/broken-image.jpg" />    
             </div>
         </div>
-        <div className="flex items-center justify-center">
+        <div className="flex flex-col items-center justify-center">
             <Card style={{
                 padding: '16px',   width: 460, 
                 display:"flex", flexDirection: "column", 
@@ -55,15 +69,25 @@ const TodoList = () => {
                 >Add</Button>
             </Card>
 
-            {todos.map((todo) => {
-                return (
-                    <div key={todo._id}>
-                        <h1>{todo.title}</h1>
-                        <p>{todo.description}</p>
-                    </div>
-                    
-                )
-            })}
+            <div className="mt-[2vw] flex flex-wrap gap-[2vw]">
+                {todos.map((todo) => {
+                    return (
+                        <Card key={todo._id}
+
+                        >
+                            <CardContent style={{marginLeft: '10px'}}>
+                                <Typography gutterBottom variant="h5" color="text.primary" style={{fontWeight: 'bold'}}>
+                                    {todo.title}
+                                </Typography>
+                                <Typography variant="body" style={{fontSize: '.8vw', fontWeight: 'medium',  display: 'block'}}>
+                                    {todo.description}
+                                </Typography>
+                            </CardContent>
+                        </Card>   
+                    )
+                })}
+            </div> 
+           
         </div>
     </div>
   )
