@@ -41,7 +41,11 @@ const TodoList = () => {
         <div className="px-[2vw] py-[2vw] flex items-center justify-between">
             <h1 className="text-[1vw] font-semibold">Todo App</h1>
             <div className="flex items-center gap-[1vw]">
-                <Button variant="contained" onClick={() => { navigate('/login') }} >Logout</Button>
+                <Button variant="contained" 
+                    onClick={() => { 
+                        navigate('/login') 
+                    }} 
+                >Logout</Button>
                 <Avatar src="/broken-image.jpg" />    
             </div>
         </div>
@@ -73,7 +77,6 @@ const TodoList = () => {
                 {todos.map((todo) => {
                     return (
                         <Card key={todo._id}
-
                         >
                             <CardContent style={{marginLeft: '10px'}}>
                                 <Typography gutterBottom variant="h5" color="text.primary" style={{fontWeight: 'bold'}}>
