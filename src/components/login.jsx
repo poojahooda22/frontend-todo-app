@@ -37,7 +37,7 @@ const Login = () => {
           label="Email" variant="outlined" size="small" 
           margin="normal"
           onChange={(e) => {
-            setUsername*e.target.value
+            setUsername(e.target.value)
           }}
         />
         <TextField 
