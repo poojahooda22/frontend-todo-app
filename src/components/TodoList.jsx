@@ -38,11 +38,13 @@ const TodoList = () => {
                 justifyContent: "center",  alignItems: "center",}}
             >
                 <TextField style={{width: '360px', height: '50px'}}  
-                    label="Title" variant="outlined" size="small" margin="normal"
+                    label="Title" variant="outlined" size="small" margin="normal" type='text'
+                    value={title}
                     onChange={(e) => {setTitle(e.target.value)}}
                 />
                 <TextField style={{width: '360px', height: '50px'}}  
-                    label="description" variant="outlined" size="small" margin="normal"
+                    label="description" variant="outlined" size="small" margin="normal" type='text'
+                    value={description}
                     onChange={(e) => {setDescription(e.target.value)}} 
                 />
                 <Button variant="contained" 
@@ -53,16 +55,13 @@ const TodoList = () => {
                 >Add</Button>
             </Card>
 
-            {todos.map((todo, index) => {
+            {todos.map((todo) => {
                 return (
-                    <Card key={index} style={{
-                        padding: '16px',   width: 460, 
-                        display:"flex", flexDirection: "column", 
-                        justifyContent: "center",  alignItems: "center",}}
-                    >
-                        <h2>{todo.title}</h2>
+                    <div key={todo._id}>
+                        <h1>{todo.title}</h1>
                         <p>{todo.description}</p>
-                    </Card>
+                    </div>
+                    
                 )
             })}
         </div>
