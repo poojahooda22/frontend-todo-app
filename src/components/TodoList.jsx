@@ -44,7 +44,7 @@ const TodoList = () => {
                 <Button variant="contained" 
                     onClick={() => { 
                         localStorage.removeItem('token');
-                        navigate('/login') 
+                        navigate('/signup') 
                     }} 
                 >Logout</Button>
                 <Avatar src="/broken-image.jpg" />    
