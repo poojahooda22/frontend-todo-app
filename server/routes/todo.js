@@ -43,9 +43,9 @@ router.patch('/todos/:todoId/done', authenticateJwt, (req, res) => {
         }
         res.json(updatedTodo);
   })
-      .catch((err) => {
+  .catch((err) => {
         res.status(500).json({ error: 'Failed to update todo' });
-    });
+  });
   });
 
 module.exports = router;
