@@ -85,7 +85,7 @@ const TodoList = () => {
                 >Add</Button>
             </Card>
 
-            <div className="mt-[2vw] flex flex-wrap gap-[2vw]">
+            <div className="mt-[4vw] flex flex-wrap gap-[2vw]">
                 {todos.map((todo) => {
                     return (
                         <Card 
@@ -98,7 +98,7 @@ const TodoList = () => {
                             }}
                         >
                             <CardContent style={{}}>
-                                <Typography gutterBottom variant="h5" color="text.primary" style={{fontWeight: 'bold', fontStyle: 'Captialize'}}>
+                                <Typography gutterBottom variant="h5" color="text.primary" style={{fontWeight: 'bold', textTransform: 'capitalize'}}>
                                     {todo.title}
                                 </Typography>
                                 <Typography variant="body" style={{fontSize: '.8vw', fontWeight: 'medium',  display: 'block'}}>
