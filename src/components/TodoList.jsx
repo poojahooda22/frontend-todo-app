@@ -26,6 +26,7 @@ const TodoList = () => {
             >
                 <TextField style={{width: '360px', height: '50px'}}  
                     label="Title" variant="outlined" size="small" margin="normal"
+                    onChange={(e) => {setTitle(e.target.value)}}
                 />
                 <TextField style={{width: '360px', height: '50px'}}  
                     label="description" variant="outlined" size="small" margin="normal" 
@@ -36,6 +37,8 @@ const TodoList = () => {
                     style={{ marginTop: '1vw', }}
                 >Add</Button>
             </Card>
+
+
         </div>
     </div>
   )
