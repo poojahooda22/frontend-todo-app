@@ -43,6 +43,7 @@ const TodoList = () => {
             <div className="flex items-center gap-[1vw]">
                 <Button variant="contained" 
                     onClick={() => { 
+                        localStorage.removeItem('token');
                         navigate('/login') 
                     }} 
                 >Logout</Button>
