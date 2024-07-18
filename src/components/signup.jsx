@@ -38,7 +38,12 @@ const Signup = () => {
                         password: password
                     })
                     let data = res.data;
-                    localStorage.setItem("token", data.token);
+                    if(data.token) {
+                        localStorage.setItem('token', data.token);
+                        window.location = '/todos';
+                      } else {
+                        alert('Invalid credentials');
+                    } 
                 }}
             >Signup</Button>
             <div className="flex items-center gap-[.5vw] py-[1vw]">
