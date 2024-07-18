@@ -12,7 +12,7 @@ app.use(cors());
 
 
 app.use("/auth", authRoutes);
-app.use("/todos", todoRoutes);
+app.use("/todo", todoRoutes);
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
