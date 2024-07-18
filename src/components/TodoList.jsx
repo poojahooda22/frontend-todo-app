@@ -8,6 +8,12 @@ const TodoList = () => {
     const navigate = useNavigate();
     const [todos, setTodos] = useState([]);
 
+    const addTodo = async () => {
+        const response = await fetch('http://localhost:3000/todo/todos', {
+            
+        })
+    }
+
     
   return (
     <div>
@@ -29,7 +35,8 @@ const TodoList = () => {
                     onChange={(e) => {setTitle(e.target.value)}}
                 />
                 <TextField style={{width: '360px', height: '50px'}}  
-                    label="description" variant="outlined" size="small" margin="normal" 
+                    label="description" variant="outlined" size="small" margin="normal"
+                    onChange={(e) => {setDescription(e.target.value)}} 
                 />
                 <Button variant="contained" 
                     margin="normal"
