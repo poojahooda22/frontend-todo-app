@@ -82,7 +82,9 @@ const TodoList = () => {
                             style={{
                             padding: '16px',   width: 460, 
                             display:"flex", flexDirection: "column", 
-                            justifyContent: "center",  alignItems: "center",}}
+                            alignItems: "start",
+                            borderRadius: '16px'
+                            }}
                         >
                             <CardContent style={{marginLeft: '10px'}}>
                                 <Typography gutterBottom variant="h5" color="text.primary" style={{fontWeight: 'bold'}}>
