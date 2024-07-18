@@ -26,7 +26,7 @@ router.get('/todos', authenticateJwt, async(req, res) => {
   Todo.find({userId})
   .then((todos) => {
         res.json(todos)
-    })
+  })
     .catch((err) => {
         res.status(500).json({error: 'Failed to fetch todos'})
     })
