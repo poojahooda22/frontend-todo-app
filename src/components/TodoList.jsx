@@ -14,8 +14,11 @@ const TodoList = () => {
             headers: {
                 'Content-Type': 'application/json', 
                 "Authorization": `Bearer ${localStorage.getItem("token")}`
-            }, 
+            },
+            body: JSON.stringify({title, description}) 
         })
+        const data = response.data;
+        setTodos([...todos, data]);
     }
 
     
@@ -46,10 +49,22 @@ const TodoList = () => {
                     margin="normal"
                     size="large"
                     style={{ marginTop: '1vw', }}
+                    onClick={addTodo}
                 >Add</Button>
             </Card>
 
-
+            {todos.map((todo, index) => {
+                return (
+                    <Card key={index} style={{
+                        padding: '16px',   width: 460, 
+                        display:"flex", flexDirection: "column", 
+                        justifyContent: "center",  alignItems: "center",}}
+                    >
+                        <h2>{todo.title}</h2>
+                        <p>{todo.description}</p>
+                    </Card>
+                )
+            })}
         </div>
     </div>
   )
