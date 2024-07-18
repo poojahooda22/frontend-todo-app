@@ -24,7 +24,7 @@ router.get('/todos', authenticateJwt, async(req, res) => {
   const userId = req.userId;
 
   Todo.find({userId})
-    .then((todos) => {
+  .then((todos) => {
         res.json(todos)
     })
     .catch((err) => {
