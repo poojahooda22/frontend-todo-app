@@ -28,7 +28,7 @@ router.get('/todos', authenticateJwt, async(req, res) => {
     res.json(todos)
   })
   .catch((err) => {
-        res.status(500).json({error: 'Failed to fetch todos'})
+      res.status(500).json({error: 'Failed to fetch todos'})
   })
 });
 
