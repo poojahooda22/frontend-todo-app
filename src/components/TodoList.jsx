@@ -1,13 +1,20 @@
 import { Avatar, Button, Card, TextField } from "@mui/material"
+import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 
 const TodoList = () => {
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
+    const navigate = useNavigate();
+    const [todos, setTodos] = useState([]);
+
     
   return (
     <div>
         <div className="px-[2vw] py-[2vw] flex items-center justify-between">
             <h1 className="text-[1vw] font-semibold">Todo App</h1>
             <div className="flex items-center gap-[1vw]">
-                <Button variant="contained" onClick={() => { localStorage.setItem("token", null)}} >Logout</Button>
+                <Button variant="contained" onClick={() => { navigate('/login') }} >Logout</Button>
                 <Avatar src="/broken-image.jpg" />    
             </div>
         </div>
