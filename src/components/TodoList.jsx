@@ -35,6 +35,17 @@ const TodoList = () => {
         setTodos([...todos, data]);
     }
 
+    const markDone = async (id) => {
+        const response = await fetch(`http://localhost:3000/todo/todos/${id}/done`, {
+            method: 'PATCH',
+            headers: { 
+                Authorization: `Bearer ${localStorage.getItem("token")}`
+            },
+        })
+        const updatedTodo = await response.json();
+        setTodos(todos.map((todo) => (todo._id === updatedTodo._id ? updatedTodo : todo)));
+    }
+
     
   return (
     <div>
@@ -80,20 +91,24 @@ const TodoList = () => {
                         <Card 
                             key={todo._id}
                             style={{
-                            padding: '16px',   width: 460, 
-                            display:"flex", flexDirection: "column", 
-                            alignItems: "start",
+                            padding: '16px',   width: 360, 
+                            display:"flex", justifyContent: 'space-between',
+                            alignItems: "center",
                             borderRadius: '16px'
                             }}
                         >
-                            <CardContent style={{marginLeft: '10px'}}>
-                                <Typography gutterBottom variant="h5" color="text.primary" style={{fontWeight: 'bold'}}>
+                            <CardContent style={{}}>
+                                <Typography gutterBottom variant="h5" color="text.primary" style={{fontWeight: 'bold', fontStyle: 'Captialize'}}>
                                     {todo.title}
                                 </Typography>
                                 <Typography variant="body" style={{fontSize: '.8vw', fontWeight: 'medium',  display: 'block'}}>
                                     {todo.description}
                                 </Typography>
                             </CardContent>
+                            <button
+                                onClick={() => markDone(todo._id)}
+                                className={`${todo.done ? 'bg-green-500' : 'border-[1px] border-green-500'} text-zinc-800 px-[.5vw] py-[.2vw] rounded-lg`}
+                            >{todo.done ? 'Done' : 'Mark as done'}</button>
                         </Card>   
                     )
                 })}
