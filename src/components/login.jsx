@@ -1,7 +1,25 @@
 import { Button, Card, TextField } from "@mui/material"
+import axios from "axios"
+import { useState } from "react"
 import { Link } from "react-router-dom"
 
 const Login = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = async () => {
+    const res =  await axios.post('http://localhost:3000/auth/login', {
+      username: username,
+      password: password
+    }, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    let data = res.data
+    localStorage.setItem("token", data.token);
+    console.log(data)
+  }
   return (
     <div className="flex items-center justify-center pt-[14vw]">
       <Card style={{
@@ -18,6 +36,7 @@ const Login = () => {
           style={{
             marginTop: '1vw',        
           }}
+          onClick={handleLogin}
         >Login</Button>
         <div className="flex items-center gap-[.5vw] py-[1vw]">
           <div className="w-[5.5vw] h-[.1px] border-[.1px] border-zinc-300"></div>
