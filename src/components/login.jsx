@@ -10,7 +10,10 @@ const Login = () => {
   const handleLogin = async () => {
     const response = await fetch('http://localhost:3000/auth/login', {
       method: 'POST',
-      headers: {'Content-Type': 'application/json'},
+      headers: {
+        'Content-Type': 'application/json', 
+        "Authorization": `Bearer ${localStorage.getItem("token")}`
+      },
       body: JSON.stringify({username, password})
     })
     const data = await response.json();
@@ -40,7 +43,7 @@ const Login = () => {
         <TextField 
           style={{width: '360px', height: '50px'}}  label="password" 
           variant="outlined" size="small" margin="normal"
-          onCHange={(e) => {
+          onChange={(e) => {
             setPassword(e.target.value)
           }}
         />
