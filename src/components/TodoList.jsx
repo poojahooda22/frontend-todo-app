@@ -31,7 +31,7 @@ const TodoList = () => {
             },
             body: JSON.stringify({title, description}) 
         })
-        const data = response.data;
+        const data = await response.json();
         setTodos([...todos, data]);
     }
 
@@ -77,7 +77,12 @@ const TodoList = () => {
             <div className="mt-[2vw] flex flex-wrap gap-[2vw]">
                 {todos.map((todo) => {
                     return (
-                        <Card key={todo._id}
+                        <Card 
+                            key={todo._id}
+                            style={{
+                            padding: '16px',   width: 460, 
+                            display:"flex", flexDirection: "column", 
+                            justifyContent: "center",  alignItems: "center",}}
                         >
                             <CardContent style={{marginLeft: '10px'}}>
                                 <Typography gutterBottom variant="h5" color="text.primary" style={{fontWeight: 'bold'}}>
