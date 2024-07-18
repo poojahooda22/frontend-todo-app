@@ -40,7 +40,7 @@ router.patch('/todos/:todoId/done', authenticateJwt, (req, res) => {
   .then((updatedTodo) => {
     if (!updatedTodo) {
           return res.status(404).json({ error: 'Todo not found' });
-        }
+    }
         res.json(updatedTodo);
   })
   .catch((err) => {
