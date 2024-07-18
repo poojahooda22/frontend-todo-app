@@ -10,7 +10,11 @@ const TodoList = () => {
 
     const addTodo = async () => {
         const response = await fetch('http://localhost:3000/todo/todos', {
-            
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json', 
+                "Authorization": `Bearer ${localStorage.getItem("token")}`
+            }, 
         })
     }
 
