@@ -66,7 +66,8 @@ const Login = () => {
         </div>
         <Link to="/signup" className="text-[.7vw]">
           Don&apos;t have an account 
-          <span className="underline text-blue-500 font-semibold">Signup</span></Link> 
+          <span className="underline text-blue-500 font-semibold">Signup</span>
+          </Link> 
       </Card>
     </div>
   )
