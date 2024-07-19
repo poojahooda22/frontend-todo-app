@@ -110,7 +110,7 @@ const TodoList = () => {
                                 <Typography 
                                     variant="body" 
                                     style={{
-                                        fontSize: '.8vw', 
+                                    fontSize: '.8vw', 
                                         fontWeight: 'medium',  
                                         display: 'block'}}
                                 >
