@@ -113,7 +113,7 @@ const TodoList = () => {
                                         fontSize: '.8vw', 
                                         fontWeight: 'medium',  
                                         display: 'block'}}
-                                    >
+                                >
                                     {todo.description}
                                 </Typography>
                             </CardContent>
