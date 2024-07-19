@@ -100,8 +100,7 @@ const TodoList = () => {
                             <CardContent style={{}}>
                                 <Typography gutterBottom variant="h5" 
                                     color="text.primary" style={{
-                                        fontWeight: 'bold', 
-                                        textTransform: 'capitalize'}}>
+                                        fontWeight: 'bold', textTransform: 'capitalize'}}>
                                     {todo.title}
                                 </Typography>
                                 <Typography 
