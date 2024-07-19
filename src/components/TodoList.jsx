@@ -102,8 +102,7 @@ const TodoList = () => {
                                     color="text.primary" 
                                     style={{
                                         fontWeight: 'bold', 
-                                        textTransform: 'capitalize'
-}}>
+                                        textTransform: 'capitalize'}}>
                                     {todo.title}
                                 </Typography>
                                 <Typography 
