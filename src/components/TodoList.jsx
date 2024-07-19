@@ -109,7 +109,8 @@ const TodoList = () => {
                                 </Typography>
                                 <Typography 
                                     variant="body" 
-                                    style={{fontSize: '.8vw', fontWeight: 'medium',  display: 'block'}}>
+                                    style={{
+                                        fontSize: '.8vw', fontWeight: 'medium',  display: 'block'}}>
                                     {todo.description}
                                 </Typography>
                             </CardContent>
