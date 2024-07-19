@@ -111,7 +111,7 @@ const TodoList = () => {
                                     variant="body" 
                                     style={{
                                     fontSize: '.8vw', 
-                                        fontWeight: 'medium',  
+                                    fontWeight: 'medium',  
                                         display: 'block'}}
                                 >
                                     {todo.description}
