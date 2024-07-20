@@ -1,5 +1,5 @@
 import { Button, Card, TextField } from "@mui/material"
-import axios from "axios"
+import axios from "axios
 import { useState } from "react"
 import { Link } from "react-router-dom"
 
@@ -24,7 +24,7 @@ const Login = () => {
       alert('Invalid credentials');
     }
   }
-  
+
   return (
     <div className="flex items-center justify-center pt-[14vw]">
       <Card style={{
