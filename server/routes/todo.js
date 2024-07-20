@@ -48,12 +48,12 @@ router.patch('/todos/:todoId/done', authenticateJwt, (req, res) => {
   });
 });
 
-router.delete('/todos/:id', authenticateJwt, async (req, res) => {
-  const { id } = req.params;
+router.delete('/todos/:todoId', authenticateJwt, async (req, res) => {
+  const { todoId } = req.params;
   const userId = req.userId;
 
   try {
-    const deletedTodo = await Todo.findOneAndDelete({ _id: id, userId });
+    const deletedTodo = await Todo.findOneAndDelete({ _id: todoId, userId });
 
     if (!deletedTodo) {
       return res.status(404).json({ error: 'Todo not found' });
