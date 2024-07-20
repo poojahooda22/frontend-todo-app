@@ -63,7 +63,8 @@ const TodoList = () => {
     <div>
         <div className="px-[2vw] py-[2vw] flex items-center justify-between">
             <h1 className="text-[1vw] font-semibold">
-                Todo App</h1>
+                Todo App
+            </h1>
             <div className="flex items-center gap-[1vw]">
                 <Button variant="contained" 
                     onClick={() => { 
