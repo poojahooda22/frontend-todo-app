@@ -24,6 +24,7 @@ const Login = () => {
       alert('Invalid credentials');
     }
   }
+  
   return (
     <div className="flex items-center justify-center pt-[14vw]">
       <Card style={{
