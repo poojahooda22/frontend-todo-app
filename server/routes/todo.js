@@ -13,7 +13,7 @@ router.post('/todos', authenticateJwt, async (req, res) => {
 
     newTodo.save()
     .then((saveTodo) => {
-        res.status(201).json(saveTodo)
+      res.status(201).json(saveTodo)
     })
     .catch((err) => {
       res.status(500).json({error: 'Failed to create a new todo'})
