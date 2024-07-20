@@ -48,4 +48,22 @@ router.patch('/todos/:todoId/done', authenticateJwt, (req, res) => {
   });
 });
 
+router.delete('/todos/:id', authenticateJwt, async (req, res) => {
+  const { id } = req.params;
+  const userId = req.userId;
+
+  try {
+    const deletedTodo = await Todo.findOneAndDelete({ _id: id, userId });
+
+    if (!deletedTodo) {
+      return res.status(404).json({ error: 'Todo not found' });
+    }
+
+    res.status(200).json({ message: 'Todo deleted successfully' });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to delete todo' });
+  }
+});
+
+
 module.exports = router;
