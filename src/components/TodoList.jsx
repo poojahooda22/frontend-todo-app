@@ -46,7 +46,7 @@ const TodoList = () => {
         setTodos(todos.map((todo) => (todo._id === updatedTodo._id ? updatedTodo : todo)));
     }
     const handleDelete = () => {
-        
+
     }
  
     
@@ -68,7 +68,7 @@ const TodoList = () => {
             <Card style={{
                 padding: '16px',   width: 460, 
                 display:"flex", flexDirection: "column", 
-                justifyContent: "center",  alignItems: "center",}}
+                justifyContent: "center",  alignItems: "center", borderRadius: '16px'}}
             >
                 <TextField style={{width: '360px', height: '50px'}}  
                     label="Title" variant="outlined" size="small" margin="normal" type='text'
@@ -83,7 +83,7 @@ const TodoList = () => {
                 <Button variant="contained" 
                     margin="normal"
                     size="large"
-                    style={{ marginTop: '1vw', }}
+                    style={{ marginTop: '1vw',  }}
                     onClick={addTodo}
                 >Add</Button>
             </Card>
