@@ -112,13 +112,13 @@ const TodoList = () => {
                                 </Typography>
                             </CardContent>
                             <div>
-                                
-                            </div>
                             <button
                                 onClick={() => markDone(todo._id)}
                                 className={`${todo.done ? 'bg-green-500' : 'border-[1px] border-green-500'} text-zinc-800 px-[.5vw] py-[.2vw] rounded-lg`}
                             >{todo.done ? 'Done' : 'Mark as done'}</button>
-                            <button>Delete</button>
+                            <button>Delete</button>              
+                            </div>
+                            
                         </Card>   
                     )
                 })}
