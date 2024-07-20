@@ -117,7 +117,7 @@ const TodoList = () => {
                                     className={`${todo.done ? 'bg-green-500 text-white' : 'border-[1px] border-green-500 text-zinc-800'}  px-[.5vw] py-[.2vw] rounded-lg`}
                                 >{todo.done ? 'Done' : 'Mark as done'}</button>
                                 <button
-                                    className="text-white bg-red-500"
+                                    className="text-white bg-red-500 px-[.5vw] py-[.2vw] rounded-lg"
                                 >Delete</button>              
                             </div>
                             
