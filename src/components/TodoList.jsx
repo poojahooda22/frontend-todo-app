@@ -118,6 +118,7 @@ const TodoList = () => {
                                 >{todo.done ? 'Done' : 'Mark as done'}</button>
                                 <button
                                     className="text-white bg-red-500 px-[.5vw] py-[.2vw] rounded-lg"
+                                    onClick={}
                                 >Delete</button>              
                             </div>
                             
