@@ -54,7 +54,6 @@ router.delete('/todos/:todoId', authenticateJwt, async (req, res) => {
 
   try {
     const deletedTodo = await Todo.findOneAndDelete({ _id: todoId, userId });
-
     if (!deletedTodo) {
       return res.status(404).json({ error: 'Todo not found' });
     }
