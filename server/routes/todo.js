@@ -57,7 +57,6 @@ router.delete('/todos/:todoId', authenticateJwt, async (req, res) => {
     if (!deletedTodo) {
       return res.status(404).json({ error: 'Todo not found' });
     }
-
     res.status(200).json({ message: 'Todo deleted successfully' });
   } catch (err) {
     res.status(500).json({ error: 'Failed to delete todo' });
