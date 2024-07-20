@@ -45,7 +45,10 @@ const TodoList = () => {
         const updatedTodo = await response.json();
         setTodos(todos.map((todo) => (todo._id === updatedTodo._id ? updatedTodo : todo)));
     }
-
+    const handleDelete = () => {
+        
+    }
+ 
     
   return (
     <div>
@@ -118,7 +121,7 @@ const TodoList = () => {
                                 >{todo.done ? 'Done' : 'Mark as done'}</button>
                                 <button
                                     className="text-white bg-red-500 px-[.5vw] py-[.2vw] rounded-lg"
-                                    onClick={}
+                                    onClick={handleDelete}
                                 >Delete</button>              
                             </div>
                             
