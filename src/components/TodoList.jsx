@@ -45,8 +45,17 @@ const TodoList = () => {
         const updatedTodo = await response.json();
         setTodos(todos.map((todo) => (todo._id === updatedTodo._id ? updatedTodo : todo)));
     }
-    const handleDelete = () => {
-
+    const handleDelete = async (id) => {
+        const response = await fetch(`http://localhost:3000/todo/todos/${id}`, {
+            method: 'DELETE',
+            headers: { 
+                Authorization: `Bearer ${localStorage.getItem("token")}`
+            },
+        })
+        const data = await response.json();
+        if(data.message === 'Todo deleted successfully') {
+            setTodos(todos.filter((todo) => todo._id !== id));
+        }
     }
  
     
@@ -121,7 +130,7 @@ const TodoList = () => {
                                 >{todo.done ? 'Done' : 'Mark as done'}</button>
                                 <button
                                     className="text-white bg-red-500 px-[.5vw] py-[.2vw] rounded-lg"
-                                    onClick={handleDelete}
+                                    onClick={() => handleDelete(todo._id)}
                                 >Delete</button>              
                             </div>
                             
